@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styles/NavBar.scss"
+import CartWidget from './CartWidget'
 
 const NavBar = () => {
   return (
@@ -11,6 +12,7 @@ const NavBar = () => {
             <li> <a href=""> Ofertas</a> </li>
             <li> <a href=""> Contacto</a> </li>
         </ul>
+        <CartWidget/>
     </div>
   )
 }
