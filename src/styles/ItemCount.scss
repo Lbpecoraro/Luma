@@ -1,0 +1,40 @@
+.contadorContainer{
+    background-color: #B2C7FC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    width: 15rem;
+    height: 10rem;
+    border-radius: .3rem;
+    box-shadow: 3px 3px 15px rgb(207, 206, 206);
+    .nombreLibro{
+        color: #EEF2FE;
+         }
+    .btnMasMenosContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+        width: 70%;
+        height:15% ;
+        .btnMasMenos{
+            border: none;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #5f96ee;
+            color: #EEF2FE;
+            border-radius: .2rem;
+         }
+         .contador{
+             color: #EEF2FE;
+         }
+        
+    }
+    .btnAgregarCarrito{
+        background-color: #5f96ee;
+        color: #EEF2FE;
+        border-radius: .3rem;
+        border: none;
+        padding: .3rem;    
+    }
+}
