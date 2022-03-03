@@ -22,7 +22,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
   return (
     <div className="contadorContainer">
-      <h3 className="nombreLibro">Al final mueren los dos</h3>
       <div className="btnMasMenosContainer">
         <button className="btnMasMenos" onClick={menos}>-</button>
         <span className="contador">{count}</span>
