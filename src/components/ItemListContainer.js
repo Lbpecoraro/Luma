@@ -3,6 +3,8 @@ import ItemCount from "./ItemCount";
 import "../styles/ItemListContainer.scss";
 import { getLibros } from "../helpers/getLibros";
 import ItemList from "./ItemList";
+import ItemDetail from "./ItemDetail";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 const ItemListContainer = () => {
   const [libros, setLibros] = useState([]);
@@ -31,7 +33,11 @@ const ItemListContainer = () => {
       loading ? 
       <h2>Cargando...</h2> 
       :
-        <ItemList libros={libros}  />
+      <div>
+         <ItemList libros={libros}  /> 
+         <ItemDetailContainer/>
+      </div>
+      
     }
 
       
