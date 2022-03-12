@@ -4,11 +4,11 @@ Sobre el proyecto:
 Luma es una página e-commerce cuyo objetivo es poner a disposición del cliente un gran catálogo de libros, pertenecientes a diversos géneros literarios, para su adquisición y disfrute.
 Este consta de diferentes secciones, como el inicio donde encontrarás el catalogo principal, luego la división de libros según su genero literario, seguido de ofertas exclusivas de la página, y por último nuestros medios de contacto en caso de tener cualquier problema o duda que podamos solucionar.
 
-<img src="public/images/captura1.PNG">
+<img src="public/images/captura1.PNG" alt="Logo" width="100%" height="100%">
 
-<img src="public/images/captura2.PNG">
+<img src="public/images/captura2.PNG" alt="Logo" width="100%" height="100%">
 
-<img src="public/images/captura3.PNG">
+<img src="public/images/captura3.PNG" alt="Logo" width="100%" height="100%">
 
 # Getting Started with Create React App
 
