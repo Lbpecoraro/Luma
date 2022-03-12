@@ -1,27 +1,35 @@
 import React, { useEffect, useState } from "react";
-import ItemCount from "./ItemCount";
 import "../styles/ItemListContainer.scss";
 import { getLibros } from "../helpers/getLibros";
 import ItemList from "./ItemList";
-import ItemDetail from "./ItemDetail";
-import ItemDetailContainer from "./ItemDetailContainer";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [libros, setLibros] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const {generoId} = useParams();
+
+
   useEffect(() => {
+if (generoId) {
+  getLibros
+  .then((res) => {
+    return res.filter((libro) => libro.genero === generoId);
+  })
+  .then((libros) => setLibros(libros))
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    setLoading(false);
+  });
+}
     getLibros
-      .then((libros) => {
-        setLibros(libros);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+      .then(libros => setLibros(libros))
+      .catch(error => console.log(error))
+      .finally(() => setLoading(false));
+    }, [generoId]);
 
   const onAdd = (cantidad) => {
     console.log(cantidad);
@@ -35,7 +43,6 @@ const ItemListContainer = () => {
       :
       <div>
          <ItemList libros={libros}  /> 
-         <ItemDetailContainer/>
       </div>
       
     }
