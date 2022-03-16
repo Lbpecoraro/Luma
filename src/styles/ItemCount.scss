@@ -1,38 +1,47 @@
-.contadorContainer{
+.contadorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 22%;
+  border-radius: 0.3rem;
+
+  .nombreLibro {
+    color: #eef2fe;
+  }
+  .btnMasMenosContainer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:space-around;
-    width: 100%;
-    border-radius: .3rem;
-   
-    .nombreLibro{
-        color: #EEF2FE;
-         }
-    .btnMasMenosContainer{
-        display: flex;
-        flex-direction: row;
-        justify-content:space-evenly;
-        width: 70%;
-        height:15% ;
-        .btnMasMenos{
-            border: none;
-            width: 1.5rem;
-            height: 1.5rem;
-            background-color: #5f96ee;
-            color: #EEF2FE;
-            border-radius: .2rem;
-         }
-         .contador{
-             color: #EEF2FE;
-         }
-        
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 70%;
+    height: 15%;
+    .btnMasMenos {
+      border: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #ffffff;
+      color: #5f96ee;
+      border-radius: 0.2rem;
+      box-shadow: 3px 3px 5px grey;
     }
-    .btnAgregarCarrito{
-        background-color: #5f96ee;
-        color: #EEF2FE;
-        border-radius: .3rem;
-        border: none;
-        padding: .3rem;    
+    .contador {
+      color: #000000;
     }
+  }
+  .btnAgregarCarrito {
+    background: linear-gradient(to top, #7da9f0, #b2c7fc);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.2rem;
+    border: none;
+    padding: 0.3rem;
+  }
+  .irAlCarritoBtn {
+    background: linear-gradient(to top, #7da9f0, #b2c7fc);
+    -webkit-background-clip: text;
+    color: transparent;
+    border: none;
+    font: 1.2rem;
+  }
 }

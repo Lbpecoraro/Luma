@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Carrito from "./components/Carrito";
 
+
 const App = () => {
   return (
     <BrowserRouter>

@@ -8,7 +8,7 @@ const ItemList = ({libros}) => {
     {
         libros.map((libro,i)=>{
             return(
-                <Item key={i} id={libro.id} img={libro.img} nombre={libro.nombre} autor={libro.autor} precio={libro.precio} stock={libro.stock} />
+                <Item key={i} id={libro.id} img={libro.img} nombre={libro.nombre} autor={libro.autor} precio={libro.precio} />
             )
         })
     }

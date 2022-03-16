@@ -31,9 +31,6 @@ if (generoId) {
       .finally(() => setLoading(false));
     }, [generoId]);
 
-  const onAdd = (cantidad) => {
-    console.log(cantidad);
-  };
 
   return (
     <div className="listContainer">

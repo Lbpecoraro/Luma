@@ -1,10 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
+import { Link } from "react-router-dom";
 import "../styles/ItemDetail.scss";
+import ItemCount from "./ItemCount";
 
 
 
 const ItemDetail = ({ libro }) => {
-console.log(libro.img);
+  const [addOnCart, setAddOnCart] = useState(false);
+
+  const onAdd = (cantidad) => {
+    setAddOnCart(true);
+  };
 
 
   return (
@@ -17,9 +23,20 @@ console.log(libro.img);
         <h4>{libro.autor}</h4>
         <h5>${libro.precio}</h5>
         <p>{libro.descripcion}</p>
+        {
+        !addOnCart ?
+       <ItemCount stock={libro.stock} initial={1} onAdd={onAdd} />
+        : 
+        <Link to="/carrito"> 
+        <button className="irAlCarritoBtn" > Ir al carrito </button>
+        </Link>
+      }
+        
       </div>
     </div>
   );
+
 };
+
 
 export default ItemDetail;

@@ -1,12 +1,9 @@
 import React from "react";
-import ItemCount from "./ItemCount";
 import "../styles/Item.scss";
 import { Link } from "react-router-dom";
 
-const item = ({ id, img, nombre, autor, precio, stock }) => {
-  const onAdd = (cantidad) => {
-    console.log(cantidad);
-  };
+const item = ({ id, img, nombre, autor, precio }) => {
+
   return (
     <Link className="itemContainer" to={`/detalle/${id}`}>
  
@@ -16,7 +13,6 @@ const item = ({ id, img, nombre, autor, precio, stock }) => {
       <h2>{nombre}</h2>
       <h3>{autor}</h3>
       <span> ${precio} </span>
-      <ItemCount stock={stock} initial={1} onAdd={onAdd} />
   
     </Link>
   );

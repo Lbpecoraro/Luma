@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/ItemCount.scss";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setcount] = useState(initial);
+  
 
   const menos = () => {
     if (count > initial) {
@@ -11,6 +13,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       console.log("La cantidad de libros elegidos no pueden ser 0");
     }
   };
+
   const mas = () => {
     if (count < stock) {
       setcount(count + 1);
@@ -20,6 +23,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       );
     }
   };
+  
   return (
     <div className="contadorContainer">
       <div className="btnMasMenosContainer">
@@ -27,7 +31,10 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <span className="contador">{count}</span>
         <button className="btnMasMenos" onClick={mas}>+</button>
       </div>
-      <button className="btnAgregarCarrito"  onClick={()=>{onAdd(count)}}>Añadir al carrito</button>
+      
+      
+       <button className="btnAgregarCarrito"  onClick={()=>{onAdd(count)}}>Añadir al carrito</button>
+     
     </div>
   );
 };
