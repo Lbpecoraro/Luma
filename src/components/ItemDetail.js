@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../Context/CartContext";
 import "../styles/ItemDetail.scss";
 import ItemCount from "./ItemCount";
 
@@ -8,10 +9,18 @@ import ItemCount from "./ItemCount";
 const ItemDetail = ({ libro }) => {
   const [addOnCart, setAddOnCart] = useState(false);
 
-  const onAdd = (cantidad) => {
+  const onAdd = (cant) => {
     setAddOnCart(true);
-  };
 
+    isInCart(libro)?
+     addItem({...libro, cantidad: cant})     
+    :
+    cartList.find(item=>item.id === libro.id).cantidad +=cant
+};
+   
+
+  const {cartList, addItem, isInCart} = useCartContext();
+  console.log(cartList);
 
   return (
     <div className="itemDetail">

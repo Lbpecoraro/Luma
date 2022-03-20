@@ -5,11 +5,13 @@ import ItemListContainer from "./components/ItemListContainer";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Carrito from "./components/Carrito";
+import CartContextProvider from "./Context/CartContext";
 
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <CartContextProvider>
+       <BrowserRouter>
       <div className="appContainer">
         <NavBar />
         <Routes>
@@ -21,6 +23,8 @@ const App = () => {
         </Routes>
       </div>
     </BrowserRouter>
+    </CartContextProvider>
+   
   );
 };
 
