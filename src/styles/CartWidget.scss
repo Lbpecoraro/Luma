@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   .rutaCarrito {
     width: 100%;
     height: 100%;
@@ -16,4 +17,17 @@
   width: 100%;
   height: 50%;
   color: #7da9f0;
+}
+.icnCarrito {
+  background-color: #0062ff;
+  position: absolute;
+  top: 15%;
+  right: 20%;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }

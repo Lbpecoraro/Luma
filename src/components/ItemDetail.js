@@ -9,18 +9,10 @@ import ItemCount from "./ItemCount";
 const ItemDetail = ({ libro }) => {
   const [addOnCart, setAddOnCart] = useState(false);
 
-  const onAdd = (cant) => {
-    setAddOnCart(true);
-
-    isInCart(libro)?
-     addItem({...libro, cantidad: cant})     
-    :
-    cartList.find(item=>item.id === libro.id).cantidad +=cant
-};
+  
    
 
-  const {cartList, addItem, isInCart} = useCartContext();
-  console.log(cartList);
+  const {onAdd} = useCartContext();
 
   return (
     <div className="itemDetail">
@@ -34,7 +26,7 @@ const ItemDetail = ({ libro }) => {
         <p>{libro.descripcion}</p>
         {
         !addOnCart ?
-       <ItemCount stock={libro.stock} initial={1} onAdd={onAdd} />
+       <ItemCount stock={libro.stock} initial={1} onAdd={onAdd} addOnCart={setAddOnCart} prodInfo={libro} />
         : 
         <Link to="/carrito"> 
         <button className="irAlCarritoBtn" > Ir al carrito </button>
