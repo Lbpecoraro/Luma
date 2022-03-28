@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getLibros } from "../helpers/getLibros";
 import ItemDetail from "./ItemDetail";
 import "../styles/ItemDetailContainer.scss";
 import { useParams } from "react-router-dom";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [libro, setlibro] = useState([]);
@@ -12,17 +12,12 @@ const {detalleId} = useParams();
 
 
   useEffect(() => {
-    getLibros
-      .then((res) => {
-        return res.find((libro) => libro.id === detalleId);
-      })
-      .then((libro) => setlibro(libro))
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    const db = getFirestore();
+    const queryDb = doc(db, "libros", detalleId);
+    getDoc(queryDb)
+      .then(res => setlibro({id:res.id, ...res.data()}) )
+      .catch(error => console.log(error))
+      .finally(() => setLoading(false));
   }, [detalleId]);
 
 

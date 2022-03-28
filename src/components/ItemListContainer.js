@@ -3,48 +3,48 @@ import "../styles/ItemListContainer.scss";
 import { getLibros } from "../helpers/getLibros";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 const ItemListContainer = () => {
   const [libros, setLibros] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const {generoId} = useParams();
+  const { generoId } = useParams();
 
 
   useEffect(() => {
-if (generoId) {
-  getLibros
-  .then((res) => {
-    return res.filter((libro) => libro.genero === generoId);
-  })
-  .then((libros) => setLibros(libros))
-  .catch((error) => {
-    console.log(error);
-  })
-  .finally(() => {
-    setLoading(false);
-  });
-}
-    getLibros
-      .then(libros => setLibros(libros))
-      .catch(error => console.log(error))
-      .finally(() => setLoading(false));
-    }, [generoId]);
+    const db = getFirestore();
+const queryCollection = collection(db,"libros");
 
+
+    if (generoId) {
+      const queryFilter = query(queryCollection, where("genero", "==", generoId));
+      getDocs(queryFilter)
+      .then((libros) => setLibros(libros.docs.map(item => ({id:item.id, ...item.data()}))))
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }else{
+      getDocs(queryCollection)
+      .then((libros) => setLibros(libros.docs.map(item => ({id:item.id, ...item.data()}))))
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false)); 
+    }
+   
+  }, [generoId]);
 
   return (
     <div className="listContainer">
-         {
-      loading ? 
-      <h2>Cargando...</h2> 
-      :
-      <div>
-         <ItemList libros={libros}  /> 
-      </div>
-      
-    }
-
-      
+      {loading ? (
+        <h2>Cargando...</h2>
+      ) : (
+        <div>
+          <ItemList libros={libros} />
+        </div>
+      )}
     </div>
   );
 };
