@@ -1,11 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../Context/CartContext'
 import ItemCount from './ItemCount';
 
 const Carrito = () => {
 
-const {cartList,totalPrice, clear, removeItem, emptyCart} = useCartContext();
+  const [comprado, setComprado] = useState(false);
+const {cartList,totalPrice, clear, removeItem, emptyCart, buyCart, orderId} = useCartContext();
+const changeSetComprado = ()=>{
+  setTimeout(() => {
+    setComprado(true)
+  }, 4000);
+};
 
   return (
     <>
@@ -24,15 +30,32 @@ const {cartList,totalPrice, clear, removeItem, emptyCart} = useCartContext();
     cartList.map(libro=><li key={libro.id}>{`${libro.nombre}, cantidad: ${libro.cantidad},precio: ${libro.precio * libro.cantidad}`} <button type='text' onClick={()=>{removeItem(libro)}} > Eliminar libro</button></li>)
     }
     <button type='text' className='clearCarrito' onClick={clear}> Vaciar carrito </button>
-<span> Precio total: $ {totalPrice} </span>
 
+{ !comprado ?
+<div>
+   <span> Precio total: $ {totalPrice} </span>
+   <form onSubmit={buyCart}>
+     <input id='name' type="text" placeholder='Ingrese su nombre' />
+     <input id='phone' type="number" placeholder='Ingrese su teléfono' />
+     <input id='email' type="email" placeholder='Ingrese su e-mail' />
+     <button type='submit' onClick={()=>{
+       changeSetComprado()
+     }}> Comprar </button>
+   </form>
+</div>
 
+ :
 
+<div>
+  <h3>¡muchas gracias por adquirir nuestros libros!</h3>
+  <p>{`Este es el código único de tu compra:${orderId}`}</p>
+</div>
+
+}
     </div>
     }
     </>
-  
-  )
+    )
 }
 
 export default Carrito

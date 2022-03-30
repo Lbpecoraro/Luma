@@ -1,3 +1,4 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext([]);
@@ -9,6 +10,7 @@ function CartContextProvider({ children }) {
   const [totalPrice, setTotalPrice] = useState(0);
   const [emptyCart, setEmptyCart] = useState(true);
 const [cantidad, setCantidad] = useState(0);
+const [orderId, setOrderId] = useState("");
 
   const addItem = (item) => {
     setcartList([...cartList, item]);
@@ -66,15 +68,42 @@ getCantidad(cant);
       } else {
         console.log("Tu cantidad supera el stock disponible");
       }
-    
-    }
-
-          
+    }    
 };
+
+const buyCart = (e)=>{
+e.preventDefault()
+let name = e.target.name.value;
+let phone = e.target.phone.value;
+let email = e.target.email.value;
+const order = {
+  buyer : {
+    name : name,
+    phone : phone,
+    email : email
+  },
+  items : 
+    cartList.map((item)=>(
+      {id:item.id, tittle:item.nombre, price:(item.precio*item.cantidad) }
+    )),
+date : new Date().toLocaleDateString(),
+total: totalPrice
+}
+
+const db = getFirestore();
+const queryCollection = collection(db,'orders');
+addDoc(queryCollection,order)
+.then(res => setOrderId(res.id) )
+.catch(err=> console.log(err))
+.finally(console.log("terminado"))
+
+};
+
+
 
   return (
     <CartContext.Provider
-      value={{ cartList, totalPrice,emptyCart,cantidad, addItem, clear, isInCart, removeItem, onAdd }}
+      value={{ cartList, totalPrice,orderId, emptyCart,cantidad, addItem, clear, isInCart, removeItem, onAdd, buyCart }}
     >
       {children}
     </CartContext.Provider>
@@ -82,3 +111,4 @@ getCantidad(cant);
 }
 
 export default CartContextProvider;
+
