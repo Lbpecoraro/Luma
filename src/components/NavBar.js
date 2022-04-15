@@ -40,6 +40,13 @@ const growGeneros = {
           </div>
          
         </li>
+        <Link to="/user">
+        <li>
+          {" "}
+          <a href=""> iniciar sesión</a>{" "}
+        </li>
+        </Link>
+        
         <li>
           {" "}
           <a href=""> Ofertas</a>{" "}

@@ -1,19 +1,28 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../Context/CartContext'
-import ItemCount from './ItemCount';
+import { useUserContext } from '../Context/UserContext';
+
 
 const Carrito = () => {
 
   const [comprado, setComprado] = useState(false);
-const {cartList,totalPrice, clear, removeItem, emptyCart, buyCart, orderId} = useCartContext();
+const {cartList,totalPrice, clear, removeItem, emptyCart, buyCart, orderId,clearWithoutEmptyCart} = useCartContext();
+
+const {user} = useUserContext();
+
 const changeSetComprado = ()=>{
   setTimeout(() => {
     setComprado(true)
+    clearWithoutEmptyCart();
   }, 4000);
 };
 
   return (
+    <>
+    {!user ? 
+    <h3> Para agregar productos al carrito, debes iniciar sesión primero</h3> 
+    : 
     <>
     {
       emptyCart ? 
@@ -54,6 +63,9 @@ const changeSetComprado = ()=>{
 }
     </div>
     }
+    </>
+    } 
+    
     </>
     )
 }
