@@ -5,10 +5,10 @@ import { useCartContext } from "../Context/CartContext";
 import "../styles/CartWidget.scss";
 
 const CartWidget = () => {
-  const { emptyCart, cantidad } = useCartContext();
+  const {quantity } = useCartContext();
   return (
     <>
-      {emptyCart ? (
+      {quantity===0 ? (
         <div className="cartWidget">
           <Link className="rutaCarrito" to="/Carrito">
             <AiOutlineShoppingCart className="cart" />
@@ -19,7 +19,7 @@ const CartWidget = () => {
           <Link className="rutaCarrito" to="/Carrito">
             <AiOutlineShoppingCart className="cart" />
           </Link>
-          <span className="icnCarrito">{cantidad}</span>
+          <span className="icnCarrito">{quantity}</span>
         </div>
       )}
     </>

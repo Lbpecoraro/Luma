@@ -8,10 +8,7 @@ const User = () => {
   return (
     <> {
         user ? <UserView/> : <LogIn/>
-    }
-        
-            
-        
+    }      
     </>
   )
 }

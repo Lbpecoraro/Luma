@@ -35,7 +35,6 @@ const setUserWithFirebase = (userFirebase)=>{
     setUser(userData);
 };
 
-
   onAuthStateChanged(auth, (userFirebase)=>{
 if (userFirebase) {
     if (!user) {
@@ -67,7 +66,5 @@ setDoc(docRef,{email:email, cart:[], orders:[]});
     </UserContext.Provider>
   )
 }
-
-
 
 export default UserContextProvider;

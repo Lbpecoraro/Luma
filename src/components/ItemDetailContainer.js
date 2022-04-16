@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const [libro, setlibro] = useState([]);
+  const [book, setBook] = useState([]);
   const [loading, setLoading] = useState(true);
 
 const {detalleId} = useParams();
@@ -15,7 +15,7 @@ const {detalleId} = useParams();
     const db = getFirestore();
     const queryDb = doc(db, "libros", detalleId);
     getDoc(queryDb)
-      .then(res => setlibro({id:res.id, ...res.data()}) )
+      .then(res => setBook({id:res.id, ...res.data()}) )
       .catch(error => console.log(error))
       .finally(() => setLoading(false));
   }, [detalleId]);
@@ -28,7 +28,7 @@ const {detalleId} = useParams();
         <h2>Cargando...</h2>
       ) : (
         <div>
-          <ItemDetail libro={libro} />
+          <ItemDetail libro={book} />
         </div>
       )}
     </div>

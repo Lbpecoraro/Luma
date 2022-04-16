@@ -11,12 +11,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 3px 3px 5px grey;
 
-  h2,
-  h3 {
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 100;
+  .itemInfo {
+    height: 5rem;
+    h2,
+    h3 {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 100;
+    }
   }
 
   .itemImgContainer {
@@ -29,6 +34,5 @@
   img {
     object-fit: cover;
     width: 100%;
-    box-shadow: 3px 3px 5px grey;
   }
 }

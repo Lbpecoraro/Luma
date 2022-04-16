@@ -4,14 +4,8 @@ import { useCartContext } from "../Context/CartContext";
 import "../styles/ItemDetail.scss";
 import ItemCount from "./ItemCount";
 
-
-
 const ItemDetail = ({ libro }) => {
   const [addOnCart, setAddOnCart] = useState(false);
-
-  
-   
-
   const {onAdd} = useCartContext();
 
   return (
@@ -36,8 +30,6 @@ const ItemDetail = ({ libro }) => {
       </div>
     </div>
   );
-
 };
-
 
 export default ItemDetail;

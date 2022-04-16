@@ -1,5 +1,7 @@
 # Luma
 
+<img src="public/images/2022-04-16 19-11-36.gif" alt="Logo" width="100%" height="100%">
+
 Sobre el proyecto:
 Luma es una página e-commerce cuyo objetivo es poner a disposición del cliente un gran catálogo de libros, pertenecientes a diversos géneros literarios, para su adquisición y disfrute.
 Este consta de diferentes secciones, como el inicio donde encontrarás el catalogo principal, luego la división de libros según su genero literario, seguido de ofertas exclusivas de la página, y por último nuestros medios de contacto en caso de tener cualquier problema o duda que podamos solucionar.
@@ -15,6 +17,22 @@ Este consta de diferentes secciones, como el inicio donde encontrarás el catalo
 ## Información de un producto (libro)
 
 <img src="public/images/Captura3.PNG" alt="Logo" width="100%" height="100%">
+
+# Librerías
+
+## React-toastify
+
+Uso: Permite agregar notificaciones a la aplicación de manera sencilla. Las mismas se pueden encontrar cuando se agregan items al carrito, o cuando debes iniciar sesión para utilizarlo.
+Link a la librería:
+https://fkhadra.github.io/react-toastify/introduction/
+Versión: v8.2.0
+
+## Formik
+
+Uso: Esta librería esta diseñada para poder manejar formularios con validaciones complejas con mayor facilidad. Se usa en los formularios de inicio de sesión y al comprar los productos anteriormente agregados al carrito.
+Link a la librería:
+https://formik.org/
+Versión: v2.2.9
 
 # Getting Started with Create React App
 
