@@ -71,16 +71,13 @@ const ItemCount = ({ stock, initial, onAdd, addOnCart, prodInfo }) => {
     })
   }
 
-
   return (
-
     <div className="contadorContainer">
       <div className="btnMasMenosContainer">
         <button className="btnMasMenos" onClick={less}>-</button>
         <span className="contador">{count}</span>
         <button className="btnMasMenos" onClick={plus}>+</button>
       </div>
-      
       
        <button className="btnAgregarCarrito"  onClick={()=>{
          if (user) {

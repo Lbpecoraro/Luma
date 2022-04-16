@@ -4,7 +4,6 @@ import "../styles/ItemList.scss"
 const ItemList = ({libros}) => {
   return (
     <div className='itemList'>
-
     {
         libros.map((libro,i)=>{
             return(
@@ -12,7 +11,6 @@ const ItemList = ({libros}) => {
             )
         })
     }
-
     </div>
   )
 }

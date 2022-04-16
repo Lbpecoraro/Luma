@@ -22,16 +22,16 @@ Este consta de diferentes secciones, como el inicio donde encontrarás el catalo
 
 ## React-toastify
 
-Uso: Permite agregar notificaciones a la aplicación de manera sencilla. Las mismas se pueden encontrar cuando se agregan items al carrito, o cuando debes iniciar sesión para utilizarlo.
+Uso: Permite agregar notificaciones a la aplicación de manera sencilla. Las mismas se pueden encontrar cuando se agregan items al carrito, o cuando debes iniciar sesión para utilizarlo.\
 Link a la librería:
-https://fkhadra.github.io/react-toastify/introduction/
+https://fkhadra.github.io/react-toastify/introduction/ \
 Versión: v8.2.0
 
 ## Formik
 
-Uso: Esta librería esta diseñada para poder manejar formularios con validaciones complejas con mayor facilidad. Se usa en los formularios de inicio de sesión y al comprar los productos anteriormente agregados al carrito.
+Uso: Esta librería esta diseñada para poder manejar formularios con validaciones complejas con mayor facilidad. Se usa en los formularios de inicio de sesión y al comprar los productos anteriormente agregados al carrito.\
 Link a la librería:
-https://formik.org/
+https://formik.org/ \
 Versión: v2.2.9
 
 # Getting Started with Create React App

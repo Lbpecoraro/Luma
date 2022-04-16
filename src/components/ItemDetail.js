@@ -26,7 +26,6 @@ const ItemDetail = ({ libro }) => {
         <button className="irAlCarritoBtn" > Ir al carrito </button>
         </Link>
       }
-        
       </div>
     </div>
   );

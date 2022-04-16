@@ -86,7 +86,7 @@ validate={(valores) => {
     if (!valores.name) {
         errores.name = 'Porfavor ingrese un nombre';
     } else if (!/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(valores.name)) {
-        errores.name = 'Ingrese un nombre válido';
+        errores.name = 'Ingrese un nombre válido, iniciando con mayúscula, ej: Camila';
     }
     if (!valores.phone) {
         errores.phone = 'Porfavor ingrese un telefono celular';

@@ -7,9 +7,7 @@ import { doc, getDoc, getFirestore } from "firebase/firestore";
 const ItemDetailContainer = () => {
   const [book, setBook] = useState([]);
   const [loading, setLoading] = useState(true);
-
 const {detalleId} = useParams();
-
 
   useEffect(() => {
     const db = getFirestore();
@@ -19,8 +17,6 @@ const {detalleId} = useParams();
       .catch(error => console.log(error))
       .finally(() => setLoading(false));
   }, [detalleId]);
-
-
 
   return (
     <div className="itemDetailContainer">
