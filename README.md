@@ -10,7 +10,7 @@ Este consta de diferentes secciones, como el inicio donde encontrarás el catalo
 
 <img src="public/images/Captura1.PNG" alt="Logo" width="100%" height="100%">
 
-## Género novela
+## Género fantasía
 
 <img src="public/images/Captura2.PNG" alt="Logo" width="100%" height="100%">
 
